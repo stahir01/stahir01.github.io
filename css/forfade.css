@@ -158,13 +158,21 @@ h1.display-2 {
   height: 100%;
 }
 
+.jobCardsTesla {
+  height: 200px;
+  width: 200px;
+  background-image: url(images/Tesla.jpg); /* Update the image URL */
+  background-size: cover; /* Use 'cover' to adjust the image size */
+  background-repeat: no-repeat;
+  border-radius: 50%;
+}
+
 .jobCardsJU {
   height: 200px;
   width: 200px;
   background-image: url(images/GetSteps_Logo.png);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
   border-radius: 50%;
 }
 .jobCardsUp {
