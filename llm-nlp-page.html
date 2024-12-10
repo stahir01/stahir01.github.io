@@ -96,6 +96,11 @@
                         the pipeline to ensure seamless document analysis and result storage in JSON format, which allowed us to review and improve the model’s accuracy. 
                         To evaluate the models, we manually assessed their responses using ChatGPT as a benchmark, scoring each answer to refine our approach.
                     </p>
+                    <div class="image-container">
+                        <img src="images/ClearleaArchitecture1.png" alt="ClearLea Architecture - Part 1" style="width: 50%; height: auto;">
+                        <img src="images/ClearleaArchitecture2.png" alt="ClearLea Architecture - Part 2" style="width: 50%; height: auto;">
+                        <p><em>Figure: Data Pipeline & Model Architecture.</em></p>
+                    </div>
                     <p class="full-width-paragraph">
                         In the end, our team’s collaboration, along with insights from Clearlea’s partners, helped us overcome technical challenges and produce a working prototype in record time. It was an experience that strengthened my technical skills and highlighted the importance of teamwork and problem-solving.
                     </p>
@@ -157,33 +162,72 @@
     </div><br>
 	
     <div id="fh5co-work" class="fh5co-bg-dark">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Transform Your Watchlist: A Smart, Sequence-Savvy Recommender</h2>
-                    <p> Your Next Favorite Movie Isn’t Random – It’s Science!</p>
-				</div>
-			</div>
-		</div>
-	</div>
+        <div class="container">
+            <div class="row animate-box">
+                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                    <h2>Transform Your Watchlist: A Smart, Sequence-Savvy Recommender</h2>
+                    <p>Your Next Favorite Movie Isn’t Random – It’s Science!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <div id="fh5co-about" class="animate-box">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
                     <p class="full-width-paragraph">
-                        Our project takes recommendation systems to the next level by using transformers to make smart, personalized recommendations based on your unique viewing history. 
-                        Traditional recommendation systems often miss the importance of interaction order, so they don’t capture your changing tastes over time. This is where our <strong>Behavior Sequence Transformer</strong> 
-                        steps in, analyzing your past choices in sequence to serve up recommendations that actually make sense!
+                        Every movie you watch, every title you skip, and every rating you give tells a story – not just about what you like, 
+                        but how your preferences evolve over time. Traditional recommendation systems often ignore this sequence, treating 
+                        your history like a static checklist. But preferences are dynamic, like a moving painting, constantly reshaping.
                     </p>
                     <p class="full-width-paragraph">
-                        Our approach involved feeding user interaction data into a transformer model, where each item's position in the sequence was encoded to reflect temporal relevance. 
-                        We trained the model using popular datasets, such as the MovieLens 1M and 25M datasets, which allowed us to refine recommendations based on detailed movie ratings and 
-                        viewing patterns. The transformer architecture’s self-attention mechanism enabled the model to identify intricate patterns in user behavior, ultimately generating highly personalized 
-                        and relevant recommendations.
+                        Enter the <strong>Behavior Sequence Transformer</strong>, a system that listens to the rhythm of your choices. It doesn’t just suggest movies; it weaves together 
+                        patterns, detects shifts in interests, and evolves with you. Using transformers – the backbone of modern AI – we created a system that sees beyond isolated data points. 
+                        It captures the <em>context</em>, the <em>order</em>, and the <em>why</em> behind your preferences.
+                    </p>
+    
+                    <!-- Architecture Image -->
+                    <div class="image-container">
+                        <img src="images/Behaviour sequence transformer.png" alt="Behavior Sequence Transformer Architecture" style="width: 50%; height: auto; border-radius: 50%;">
+                        <p><em>Architecture of the Behavior Sequence Transformer.</em></p>
+                    </div>
+    
+                    <p class="full-width-paragraph">
+                        The architecture combines contextual user data (like movie genres, ratings, and user profiles) with the self-attention mechanisms of transformers. 
+                        Every sequence is a story, and every attention layer learns its meaning. By understanding these interactions, the system ensures that your next 
+                        recommendation feels less like a guess and more like a perfectly-timed suggestion.
+                    </p>
+    
+                    <!-- Results Section in a Box -->
+                    <div class="results-box" style="border: 1px solid #ccc; padding: 20px; margin-top: 30px; border-radius: 10px; background-color: #f9f9f9;">
+                        <h3 style="text-align: center; margin-bottom: 20px;">Results</h3>
+                        <div class="row">
+                            <!-- First Row of Images -->
+                            <div class="col-md-6" style="float: left; width: 50%; padding: 10px;">
+                                <img src="images/BST_sequence_length_plot.png" alt="Model Performance for Sequence Lengths" style="width: 100%; height: auto; border-radius: 10px;">
+                                <p><em>Impact of sequence length</em></p>
+                            </div>
+                            <div class="col-md-6" style="float: left; width: 50%; padding: 10px;">
+                                <img src="images/BST_test_rmse_score_for_epochs.png" alt="Test RMSE Across Epochs" style="width: 100%; height: auto; border-radius: 10px;">
+                            </div>
+                        </div>
+                        <!-- Second Row of Images -->
+                        <div class="row" style="clear: both; margin-top: 20px;">
+                            <div class="col-md-12" style="padding: 10px;">
+                                <img src="images/BST_Transformer model vs Traditional recommendation systems].png" alt="Comparison of Transformer and Traditional Systems" style="width: 50%; height: auto; border-radius: 10px;">
+                            </div>
+                        </div>
+                    </div>
+    
+                    <p class="full-width-paragraph">
+                        These results highlight the transformational power of our model. As seen in the sequence length analysis, the system carefully balances 
+                        its ability to learn from longer histories without overfitting. By optimizing the number of training epochs, we ensured the model reached 
+                        peak performance while maintaining computational efficiency. The comparison with traditional systems showcases the significance of sequence-aware 
+                        modeling, solidifying our approach as a game-changer in recommendation systems.
                     </p>
                     <p class="full-width-paragraph">
-
-                    </p>
+                        Imagine a system that doesn’t just predict what you might want to watch, but grows alongside you, adapting to your ever-changing tastes.                     </p>
                     <a href="https://github.com/stahir01/Neuronale_Informationsverarbeitung" class="btn btn-primary" target="_blank">
                         View on GitHub
                     </a>
@@ -191,41 +235,102 @@
             </div>
         </div>
     </div>
+    
 
     <div id="fh5co-work" class="fh5co-bg-dark">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>From Cyrillic to English with a Neural Spin!</h2>
-                    <p> Building a Translator that Understands the Story Behind Every Sentence</p>
-				</div>
-			</div>
-		</div>
-	</div>
+        <div class="container">
+            <div class="row animate-box">
+                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                    <h2>From Cyrillic to English with a Neural Spin!</h2>
+                    <p>Building a Translator that Understands the Story Behind Every Sentence</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <div id="fh5co-about" class="animate-box">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
                     <p>
-                    The goal of this project was to develop a neural machine translation model capable of translating between English and Bulgarian.
-                    Using the European Parliament Proceedings Parallel Corpus, we trained our models on both languages, focusing on capturing meaningful 
-                    translations and handling complex language structures. To keep the training efficient, we utilized Google Colab and focused on half of the dataset,
-                    balancing performance with computational limits.
+                        Translating languages isn’t just about replacing words—it’s about understanding their essence. Using 
+                        the European Parliament Proceedings Parallel Corpus, we trained a neural machine translation model capable of translating between English 
+                        and Bulgarian. This task presented unique challenges, from Cyrillic alphabet handling to capturing complex syntax. Here’s how we tackled it.
                     </p>
-
                     <p>
-                    We experimented with various model architectures, including standard Recurrent Neural Networks (RNNs) and an improved attention-based RNN model. 
-                    The RNN model used **GloVe** embeddings for English and **FastText** for Bulgarian, transforming words into dense vectors that capture semantic relationships. 
-                    By incorporating attention mechanisms, we achieved a substantial improvement in translation accuracy, especially on longer sentences where the attention model could
-                    focus on specific parts of the sequence.
+                        Preprocessing played a pivotal role in preparing the dataset for neural learning. We tokenized sentences, normalized case, 
+                        and leveraged pre-trained word embeddings—<strong>GloVe</strong> for English and <strong>FastText</strong> for Bulgarian. These embeddings 
+                        transformed words into dense semantic vectors, capturing both meaning and context.
                     </p>
-        
                     <p>
-                    The final results showed that the attention model outperformed standard RNNs, delivering significantly higher BLEU and METEOR scores. However, due to memory constraints, 
-                    we evaluated the model on a limited sample, but it showed promising results for future expansion. This project highlighted the power of attention in neural machine translation, 
-                    allowing our model to translate effectively between Bulgarian and English.
+                        We experimented with various model architectures, including standard Recurrent Neural Networks (RNNs) and an improved attention-based RNN model. 
+                        The RNN model used <strong>GloVe</strong> embeddings for English and <strong>FastText</strong> for Bulgarian, transforming words into dense 
+                        vectors that capture semantic relationships. By incorporating attention mechanisms, we achieved a substantial improvement in translation accuracy, 
+                        especially on longer sentences where the attention model could focus on specific parts of the sequence.
                     </p>
-
+    
+                    <!-- Model Architectures Section -->
+                    <div class="results-box" style="border: 1px solid #ccc; padding: 20px; margin-top: 30px; border-radius: 10px; background-color: #f9f9f9;">
+                        <h3 style="text-align: center; margin-bottom: 20px;">Model Architectures</h3>
+                        <div class="row">
+                            <!-- RNN-Based Seq2Seq Model -->
+                            <div class="col-md-6 text-center">
+                                <div style="border: 1px solid #ddd; padding: 15px; border-radius: 10px; background-color: #f0f0f0;">
+                                    <h4 style="color: #2c3e50;">RNN-Based Seq2Seq Model</h4>
+                                    <pre style="text-align: left; font-size: 11px; overflow-x: auto; background: #272822; color: #f8f8f2; padding: 10px; border-radius: 8px;">
+    
+    def seq2seq_model(input_vocab_size, output_vocab_size, encoder_embedding_matrix, decoder_embedding_matrix, 
+                      embedding_dim=300, max_length=25, hidden_units=128, change_targets=False):
+        if not change_targets:  # English to Bulgarian
+            encoder_inputs = Input(shape=(max_length,))
+            encoder_embedding = Embedding(input_vocab_size, embedding_dim, weights=[encoder_embedding_matrix], 
+                                           input_length=max_length, mask_zero=True)(encoder_inputs)
+            encoder_lstm = LSTM(hidden_units)(encoder_embedding)
+            decoder_inputs = Input(shape=(None,))
+            decoder_embedding = Embedding(output_vocab_size, embedding_dim, weights=[decoder_embedding_matrix])(decoder_inputs)
+            decoder_lstm = LSTM(hidden_units, return_sequences=True)(decoder_embedding)
+            decoder_outputs = Dense(output_vocab_size, activation='softmax')(decoder_lstm)
+            model = Model([encoder_inputs, decoder_inputs], decoder_outputs)
+        else:  # Bulgarian to English
+            ...
+        return model
+                                    </pre>
+                                </div>
+                            </div>
+                            
+                            <!-- Attention-Based Seq2Seq Model -->
+                            <div class="col-md-6 text-center">
+                                <div style="border: 1px solid #ddd; padding: 15px; border-radius: 10px; background-color: #f0f0f0;">
+                                    <h4 style="color: #2c3e50;">Attention-Based Seq2Seq Model</h4>
+                                    <pre style="text-align: left; font-size: 11px; overflow-x: auto; background: #272822; color: #f8f8f2; padding: 10px; border-radius: 8px;">
+    
+    def seq2seq_attention(input_vocab_size, output_vocab_size, encoder_embedding_matrix, decoder_embedding_matrix, 
+                          embedding_dim=300, max_length=25, hidden_units=128, dropout_rate=0.2):
+        encoder_inputs = Input(shape=(max_length,))
+        encoder_embedding = Embedding(input_vocab_size, embedding_dim, weights=[encoder_embedding_matrix], 
+                                       input_length=max_length, mask_zero=True)(encoder_inputs)
+        encoder_lstm = LSTM(hidden_units, return_sequences=True)(encoder_embedding)
+        encoder_lstm = Dropout(dropout_rate)(encoder_lstm)
+        decoder_inputs = Input(shape=(None,))
+        decoder_embedding = Embedding(output_vocab_size, embedding_dim, weights=[decoder_embedding_matrix])(decoder_inputs)
+        decoder_lstm = LSTM(hidden_units, return_sequences=True)(decoder_embedding)
+        decoder_lstm = Dropout(dropout_rate)(decoder_lstm)
+        cross_attention = CrossAttention(units=hidden_units)
+        decoder_attention = cross_attention(decoder_lstm, encoder_lstm)
+        decoder_outputs = Dense(output_vocab_size, activation='softmax')(decoder_attention)
+        model = Model([encoder_inputs, decoder_inputs], decoder_outputs)
+        return model
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <p>
+                        The final results showed that the attention model outperformed standard RNNs, delivering significantly higher BLEU and METEOR scores. 
+                        However, due to memory constraints, we evaluated the model on a limited sample, but it showed promising results for future expansion. 
+                        This project highlighted the power of attention in neural machine translation, allowing our model to translate effectively between Bulgarian and English.
+                    </p>
                     <a href="https://github.com/stahir01/Machine-Translation" class="btn btn-primary" target="_blank">
                         View on GitHub
                     </a>
@@ -233,29 +338,61 @@
             </div>
         </div>
     </div>
-
+    
 
 
     <div id="fh5co-work" class="fh5co-bg-dark">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Decoding Financial Sentiment: A Deep Dive into Market Mood</h2>
-                    <p> Turning Headlines into Insights with NLP-Powered Sentiment Analysis</p>
-				</div>
-			</div>
-		</div>
-	</div>
+        <div class="container">
+            <div class="row animate-box">
+                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                    <h2>Decoding Financial Sentiment: A Deep Dive into Market Mood</h2>
+                    <p>Turning Headlines into Insights with NLP-Powered Sentiment Analysis</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <div id="fh5co-about" class="animate-box">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <p>This project aimed to analyze the sentiment of financial news headlines, transforming them into valuable insights for market trends. Using a dataset of financial sentences labeled as positive, neutral, or negative, we applied a range of pre-processing techniques, including lower-casing, punctuation removal, and tokenization. This helped create a clean input for our models, allowing them to focus on the language patterns that indicate sentiment.</p>
-
-                    <p>We tested various machine learning models, such as **Naïve Bayes**, **Feed-Forward Neural Networks (FFN)**, and **Random Forests**. For feature extraction, we experimented with Count Vectorization and TF-IDF to understand which method best captured the nuances of financial language. Imbalanced data presented a challenge, so we used oversampling techniques to improve the performance, especially for underrepresented classes.</p>
-        
-                    <p>Our results showed that the **Random Forest model** performed best on the balanced dataset, achieving a high F1-score of 0.91, indicating its superior ability to capture sentiment. This project illustrates how NLP techniques can unlock valuable insights from financial text, helping interpret market sentiment more accurately.</p>
-                    
+                    <p>
+                        Markets are driven by emotion, and headlines are often their loudest echoes. This project aimed to unlock the sentiment 
+                        hidden in financial news—transforming headlines into actionable insights that could help investors gauge market mood 
+                        and make informed decisions.
+                    </p>
+                    <p>
+                        Financial headlines aren’t just text; they’re a treasure trove of nuance, statistics, and implications. Our first challenge was taming this raw data, 
+                        which came with its quirks—short sentences, symbol-heavy phrasing, and a noticeable imbalance in sentiment classes where neutral headlines dominated. 
+                        To address these challenges, we implemented a sophisticated preprocessing pipeline that included steps like lowercasing, symbol replacement, lemmatization, 
+                        and tokenization. These transformations turned noisy data into a structured format, laying the foundation for effective analysis.
+                    </p>
+                    <p>
+                        To classify sentiment, we tested models including Naïve Bayes, Feed-Forward Neural Networks (FFN), and Random Forest. Among these, Random Forest 
+                        emerged as the top performer, achieving an impressive F1-score of 0.91. Its ability to handle the complexities of balanced data highlighted its suitability 
+                        for this task, while oversampling techniques significantly improved the performance of all models.
+                    </p>
+    
+                    <!-- Image and Results Section -->
+                    <div class="results-box" style="border: 1px solid #ccc; padding: 20px; margin-top: 30px; border-radius: 10px; background-color: #f9f9f9;">
+                        <div class="row">
+                            <!-- Naive Bayes Image -->
+                            <div class="col-md-6 text-center" style="padding: 10px;">
+                                <img src="images/FinancialSentimentalAnalysis_Class Imbalance Oversample Minority Class (naives_bayes_model.png" alt="Naïve Bayes Classifier Results" style="width: 70%; height: auto; border-radius: 10px;">
+                                <p><em>Naïve Bayes classifier results with oversampled minority class.</em></p>
+                            </div>
+                            <!-- Random Forest Image -->
+                            <div class="col-md-6 text-center" style="padding: 10px;">
+                                <img src="images/FinancialSentimentalAnalysis_Class Imbalance Oversample Minority Class (RandomForest).png" alt="Random Forest Classifier Results" style="width: 70%; height: auto; border-radius: 10px;">
+                                <p><em>Random Forest classifier results with oversampled minority class.</em></p>
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        This project demonstrated how NLP techniques can decode market sentiment, turning financial headlines into valuable insights. 
+                        By applying the right preprocessing, feature engineering, and modeling strategies, we showcased the potential of data-driven 
+                        decision-making in finance.
+                    </p>
                     <a href="https://github.com/stahir01/Sentiment-Analysis-Financial-News" class="btn btn-primary" target="_blank">
                         View on GitHub
                     </a>
@@ -264,8 +401,7 @@
         </div>
     </div>
 
-
-	
+    
 	
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
