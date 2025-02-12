@@ -1,13 +1,17 @@
+import os
 import uvicorn
 from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import List, Optional
-app = FastAPI()
+from dotenv import load_dotenv
 
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+app = FastAPI(
+    title="Langchain Server",
+    version="1.0",
+    description="This is the Langhchain server to interact with chatbot"
+    )
+
 
 
 
