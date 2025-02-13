@@ -23,7 +23,7 @@ DEFAULT_EMBED_MODEL = MINI_LM_EMBED
 def generate_embedding(
         docs: List[Document], 
         embed_model: Optional[str] = None
-    ) -> Tuple[List[List[float]], List[str]]:
+    ) -> Tuple[List[List[float]], List[str], List[dict]]:
     """
     Generate embeddings for a list of text chunks using Hugging Face.
 
@@ -43,7 +43,8 @@ def generate_embedding(
     embedding_model = HuggingFaceEmbeddings(model_name=embed_model, show_progress=True)
 
     text_chunks = [doc.page_content for doc in docs]
+    metadata = [doc.metadata for doc in documents]
 
     embeddings = embedding_model.embed_documents(text_chunks)
 
-    return embeddings, text_chunks 
+    return embeddings, text_chunks, metadata
