@@ -1,3 +1,40 @@
+# 🛑 Ignore Virtual Environments
+portfolio_env/
+venv/
+
+# 🛑 Ignore Environment Files
+.env
+.env.local
+.env.development
+.env.production
+
+# 🛑 Ignore Python Cache Files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+cache/
+
+# 🛑 Ignore Database Files
+*.sqlite3
+*.db
+
+# 🛑 Ignore Logs
+*.log
+
+# 🛑 Ignore IDE & System-Specific Files
+.vscode/
+.idea/
+.DS_Store
+
+# 🛑 Ignore Compiled Code
+*.pyc
+*.pyo
+
+# 🛑 Ignore Node Modules (Frontend)
+node_modules/
+dist/
+build/
+
 .env
 mystory.html
-
