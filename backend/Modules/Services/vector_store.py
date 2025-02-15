@@ -2,8 +2,8 @@ import os
 import logging
 from typing import List, Optional
 from langchain.schema import Document
-from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.vectorstores import Chroma
+from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.vectorstores import Chroma
 from backend.Modules.config import (
     OPENAI_KEY,
     MINI_LM_EMBED,

@@ -1,8 +1,8 @@
 import os
 from typing import List, Optional
-from langchain.vectorstores import Chroma
+from langchain_community.vectorstores import Chroma
 from langchain.schema import Document
-from langchain.embeddings import HuggingFaceEmbeddings
+from langchain_community.embeddings import HuggingFaceEmbeddings
 from backend.Modules.config import MINI_LM_EMBED
 
 DEFAULT_EMBED_MODEL = MINI_LM_EMBED
@@ -43,6 +43,6 @@ def retrieve_text(
         )
 
     # Retrieve relevant documents from the vector store
-    matched_texts = vector_db.similarity_search(query, k=2)  
+    matched_texts = vector_db.similarity_search(query, k=7)  
 
     return matched_texts

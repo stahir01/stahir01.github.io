@@ -1,10 +1,11 @@
+from langchain_community.vectorstores import Chroma
+from langchain_community.embeddings import HuggingFaceEmbeddings 
+from langchain_huggingface import HuggingFaceEndpoint
 from backend.Modules.config import (
     FALCON_MODEL,
     DEEPSEEK_MODEL,
     HUGGINGFACE_KEY
 )
-from langchain_community.llms import HuggingFaceEndpoint 
-from langchain_huggingface.llms import HuggingFacePipeline
 
 #HuggingFaceEndpoint: Used to access model via API
 #HuggingFacePipeline: Used to download model to local filesystem first
@@ -35,10 +36,10 @@ class Chatbot:
         return HuggingFaceEndpoint(
             repo_id=model_name,
             task="text-generation",
-            max_new_tokens=500,
+            max_new_tokens=300,
             do_sample=True,
-            top_k=4,
-            temperature=0.1,
+            top_k=10,
+            temperature=0.2,
             huggingfacehub_api_token=self.api_token,
         )
 
