@@ -23,7 +23,7 @@ def split_text(pdf_docs: List[str], chunk_size: int = 500, chunk_overlap: int = 
     for page_text in pdf_docs:
         split_chunks = text_splitter.split_text(page_text)
         for chunk in split_chunks:
-            chunks.append(Document(page_content=chunk, metadata={"page": doc["page"]}))
+            chunks.append(Document(page_content=chunk))
     
     return chunks
     

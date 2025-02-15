@@ -1,37 +1,51 @@
 import os
 import logging
-from typing import List
+from typing import List, Optional
+from langchain.schema import Document
+from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.vectorstores import Chroma
+from backend.Modules.config import (
+    OPENAI_KEY,
+    MINI_LM_EMBED,
+    VECTOR_DB_PATH
+)
 
-# Define the storage path for ChromaDB
-VECTOR_DB_PATH = "vector_store/chroma_db"
+DEFAULT_EMBED_MODEL = MINI_LM_EMBED
+
 
 def store_embeddings(
-        embeddings: List[List[float]], 
-        text_chunks: List[str], 
-        metadata: List[dict], 
+        docs: List[Document],
+        embed_model: Optional[str] = None,
         collection_name: str = "chromadb"
     ) -> None:
+
     """
-    Stores precomputed embeddings and corresponding text chunks in ChromaDB.
+    Generates embeddings for text chunks and stores them in ChromaDB.
 
     Args:
-        embeddings (List[List[float]]): List of embedding vectors.
-        text_chunks (List[str]): List of text chunks corresponding to embeddings.
+        docs (List[Document]): List of documents to embed.
+        embed_model (Optional[str]): Name of the Hugging Face embedding model.
         collection_name (str): Name of the ChromaDB collection.
     """
 
-    # Ensure the storage directory exists
-    os.makedirs(VECTOR_DB_PATH, exist_ok=True)
+    if embed_model is None:
+        embed_model = DEFAULT_EMBED_MODEL
 
-    # Initialize ChromaDB instance
+    embedding_model = HuggingFaceEmbeddings(model_name=embed_model, show_progress=True)
+
+    text_chunks = [doc.page_content for doc in docs]
+    metadata = [doc.metadata for doc in docs]
+
+    dir_path = os.path.join(VECTOR_DB_PATH, collection_name)
+    os.makedirs(dir_path, exist_ok=True)
+
     db = Chroma(
         collection_name=collection_name,
-        persist_directory=VECTOR_DB_PATH
+        persist_directory=dir_path,
+        embedding_function=embedding_model  
     )
 
-    # Store the embeddings and text in ChromaDB
-    db.add_texts(texts=text_chunks, metadatas=metadata, embeddings=embeddings)
-    db.persist()  # Save to disk
+    db.add_texts(texts=text_chunks, metadatas=metadata, embeddings=embedding_model)
+    db.persist()  
 
     logging.info(f"✅ Stored {len(text_chunks)} text chunks in ChromaDB (Collection: {collection_name})")

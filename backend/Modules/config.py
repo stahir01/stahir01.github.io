@@ -15,6 +15,7 @@ OPENAI_KEY = os.getenv("OPENAI_KEY")
 
 # Hugging Face Model Names
 DEEPSEEK_MODEL = "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
+FALCON_MODEL = "tiiuae/falcon-7b-instruct"
 LLAMA_MODEL_70B = "meta-llama/Llama-2-70b-chat-hf"
 MISTRAL_MODEL = "mistralai/Mistral-Large-Instruct-2407"
 

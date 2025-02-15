@@ -1,0 +1,95 @@
+{
+    "work_experience": [
+      {
+        "company_name": "Tesla",
+        "location": "Berlin, Germany",
+        "role": "Data Engineer",
+        "start_date": "09/2023",
+        "end_date": "01/2025",
+        "tasks": [
+          "Developed Grafana dashboards for monitoring real-time production metrics, delivering high-quality insights for 100+ stakeholders.",
+          "Created ETL pipelines in Airflow with Python and SQL, ensuring data quality and reliability across key metrics.",
+          "Designed visual dashboards to track KPI metrics, including machine performance and uptime, providing actionable insights for decision-making.",
+          "Implemented data visualizations to track machine states, allowing management to address downtime root causes and improve productivity.",
+          "Created engineering dashboards used by 100+ stakeholders across the USA, Germany, and Canada.",
+          "Created and presented data visualizations and analytical reports to senior management, providing actionable insights into machine performance and operational efficiency.",
+          "Built real-time data ingestion ETL pipelines, integrating sensor and machine data from PLCs into the data warehouse and data mart.",
+          "Developed YAML files for CI/CD pipelines to automate deployment processes, ensuring consistent code integration and efficient delivery across environments.",
+          "Deployed applications and data pipelines in Kubernetes clusters for development and production environments, leveraging Docker for containerization to enhance scalability and manageability.",
+          "Created personalized dashboard plugins where users could input reasons for machine states, utilizing Pareto and pie charts to analyze and visualize root causes of machine downtime.",
+          "Collaborated with software engineering teams to optimize data pipelines using PySpark for large-scale distributed data processing, significantly improving data processing speed and resource utilization.",
+          "Optimized the backend of a Grafana plugin using Golang and improved the frontend using TypeScript and React."
+        ]
+      },
+      {
+        "company_name": "Technische Universität Berlin",
+        "location": "Berlin, Germany",
+        "role": "Data Scientist",
+        "start_date": "09/2022",
+        "end_date": "Present",
+        "tasks": [
+          "Utilized machine learning and deep learning techniques, including Random Forest, KNN, CNN, and Generative AI models, to predict key aircraft parameters such as range and flight mechanics.",
+          "Developed a Transformer-based behavior sequence model for a movie recommendation system, training the model on a dataset of 5 million entries and enhancing user personalization.",
+          "Conducted financial news sentiment analysis, classifying articles into positive, neutral, or negative sentiments using Random Forest and deep learning models.",
+          "Implemented time series forecasting models using LSTM, ARIMA, and Facebook Prophet for stock price prediction, comparing performance and supporting investment decisions.",
+          "Developed a deep learning-based customer segmentation model, achieving 98% accuracy for targeted marketing campaigns.",
+          "Utilized open-source large language models (LLMs) such as LLAMA 2.0 and Mixtral to extract and analyze contract information from legal documents, automating workflows.",
+          "Developed and deployed a chatbot system for Berlin’s public administration, utilizing open-source LLMs like ChatGPT 3.5, LLAMA, Alpaca, Vicuna 13b, Dolly 2.0, and Raven.",
+          "Built a Seq2Seq translation model with an attention mechanism for English-to-Bulgarian translation, using GloVe and fastText embeddings.",
+          "Developed a U-Net architecture for semantic segmentation of medical images to distinguish between cancerous and non-cancerous cells.",
+          "Built a multilabel image classification model using CNNs with Sklearn and PyTorch, applying preprocessing techniques with NumPy and Scipy for satellite image analysis."
+        ]
+      },
+      {
+        "company_name": "GetSteps",
+        "location": "Berlin, Germany",
+        "role": "Business Intelligence - Working Student",
+        "start_date": "12/2022",
+        "end_date": "04/2023",
+        "tasks": [
+          "Designed and implemented data pipelines using PostgreSQL and dbt, improving data availability and streamlining ETL workflows.",
+          "Developed custom dashboards and KPI comparison reports in Metabase, providing insights into marketing performance and customer engagement.",
+          "Enhanced data marts by adding KPIs, enabling detailed cohort analysis for the marketing team.",
+          "Established a new data model for KPIs, improving transparency and making key metrics accessible for stakeholders.",
+          "Developed a new organizational structure for data marts to improve data governance.",
+          "Conducted custom cohort analysis for the marketing team using Jupyter Notebooks, examining Customer Lifetime Value (CLV).",
+          "Created a comprehensive shopping funnel report with KPIs and visualizations.",
+          "Generated an overview report for outstanding orders with discontinued cover materials, assisting the production team in managing inventory.",
+          "Conducted ad-hoc analyses for the CEO, including sales performance reports segmented by B2B and B2B2C.",
+          "Leveraged Google Analytics and Airbyte to import data from multiple sources, enhancing data comprehensiveness."
+        ]
+      },
+      {
+        "company_name": "Europcar Mobility Group",
+        "location": "Hamburg, Germany",
+        "role": "Business Intelligence - Working Student",
+        "start_date": "09/2021",
+        "end_date": "11/2022",
+        "tasks": [
+          "Designed reports in SAP Business Objects (BO) and Google Data Studio, providing actionable insights for decision-making.",
+          "Implemented ETL pipelines in BigQuery using SQL to extract and integrate data from SAP BO and Oracle.",
+          "Built dashboards in Looker to aid stakeholders across departments in tracking key metrics.",
+          "Automated reporting processes using VBA macros in Excel and Access, reducing manual effort.",
+          "Scheduled and managed automated report generation in SAP BO and virtual machines.",
+          "Developed detailed documentation for data marts and dashboards, supporting data governance initiatives.",
+          "Maintained and updated the company’s data model, ensuring consistency across multiple sources.",
+          "Conducted training sessions for business users on dashboard usage."
+        ]
+      },
+      {
+        "company_name": "Rohde & Schwarz",
+        "location": "Islamabad, Pakistan",
+        "role": "BI Software Developer",
+        "start_date": "04/2021",
+        "end_date": "07/2021",
+        "tasks": [
+          "Performed ETL processes to maintain a centralized data warehouse, enhancing data accessibility.",
+          "Developed time series forecasting models in Tableau and Python for sales predictions and inventory management.",
+          "Created interactive dashboards in Tableau to analyze sales performance and provide actionable insights.",
+          "Presented data-driven insights and visualizations to stakeholders.",
+          "Designed and maintained ETL workflows using SQL to ensure data consistency."
+        ]
+      }
+    ]
+  }
+  

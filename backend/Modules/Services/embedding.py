@@ -5,19 +5,22 @@ This module is responsible for:
     - Performing similarity searches or retrieval for relevant information.
 """
 
+
+"""
+Used only for testing and seeing how embedding works. The whole function has already been added into vector_store.py where
+perform embedding store into database
+"""
+
 import os
 from typing import List, Optional, Tuple
 from langchain.schema import Document
 from langchain.embeddings import HuggingFaceEmbeddings
-from config import (
-    OPENAI_API_KEY,
+from backend.Modules.config import (
+    OPENAI_KEY,
     MINI_LM_EMBED,
     VECTOR_DB_PATH
 )
 
-DEFAULT_EMBED_MODEL = MINI_LM_EMBED
-
-# Define default embedding model
 DEFAULT_EMBED_MODEL = MINI_LM_EMBED
 
 def generate_embedding(
@@ -43,7 +46,7 @@ def generate_embedding(
     embedding_model = HuggingFaceEmbeddings(model_name=embed_model, show_progress=True)
 
     text_chunks = [doc.page_content for doc in docs]
-    metadata = [doc.metadata for doc in documents]
+    metadata = [doc.metadata for doc in docs]
 
     embeddings = embedding_model.embed_documents(text_chunks)
 

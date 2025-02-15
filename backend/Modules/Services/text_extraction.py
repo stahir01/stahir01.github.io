@@ -27,7 +27,7 @@ def extract_text_from_pdf(pdf_path: str) -> List[str]:
 
 def extract_text_from_json(json_path: str) -> List[str]:
     """
-    Extracts relevant text from a JSON file.
+    Extracts relevant text from a structured JSON file.
 
     Args:
         json_path (str): Path to the JSON file.
@@ -38,17 +38,18 @@ def extract_text_from_json(json_path: str) -> List[str]:
     with open(json_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    # Extract text content from JSON
     extracted_text = []
-    
-    if isinstance(data, dict):
-        for key, value in data.items():
-            if isinstance(value, str):
-                extracted_text.append(value)
-    elif isinstance(data, list):
-        for item in data:
-            if isinstance(item, str):
-                extracted_text.append(item)
+
+    if isinstance(data, dict) and "work_experience" in data:
+        for job in data["work_experience"]:
+            company = job.get("company_name", "")
+            role = job.get("role", "")
+            tasks = job.get("tasks", [])
+
+            extracted_text.append(f"Company: {company}, Role: {role}")
+
+            if isinstance(tasks, list):
+                extracted_text.extend(tasks)
 
     return extracted_text
 

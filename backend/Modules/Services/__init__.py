@@ -3,4 +3,4 @@ from .split_text import split_text
 from .embedding import generate_embedding
 from .vector_store import store_embeddings
 from .retriever import retrieve_text
-from .llm_inference import DeepSeekModel
+from .llm_inference import Chatbot
