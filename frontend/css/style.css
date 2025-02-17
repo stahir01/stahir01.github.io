@@ -1398,6 +1398,122 @@ input[type="text"] {
   transform: scale(1.05);
 }
 
+/* Chatbot Floating Button */
+#chatbot-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(45deg, #9500ff, #2d2d2d);
+  color: white;
+  font-size: 18px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s ease-in-out;
+}
+
+#chatbot-icon:hover {
+  transform: scale(1.1);
+  background: linear-gradient(45deg, #7a00cc, #000000);
+}
+
+/* Chatbot Popup */
+#chatbot-popup {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 320px;
+  background: #1c1c1c;
+  border-radius: 10px;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Chatbot Header */
+#chatbot-header {
+  background: #9500ff;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+#close-chatbot {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Messages Area */
+#chatbot-messages {
+  padding: 10px;
+  height: 300px;
+  overflow-y: auto;
+  color: white;
+  background: #222;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Chat bubble styling */
+.message {
+  margin: 5px 0;
+  max-width: 80%;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.user {
+  align-self: flex-end;
+  background-color: #9500ff;
+}
+
+.bot {
+  align-self: flex-start;
+  background-color: #333;
+}
+
+/* Input Area */
+#chatbot-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #333;
+  background: #222;
+}
+
+#user-message {
+  flex: 1;
+  padding: 8px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+#chatbot-input button {
+  background: #9500ff;
+  color: white;
+  border: none;
+  padding: 8px;
+  margin-left: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#chatbot-input button:hover {
+  background: #7a00cc;
+}
+
+
 
 
 
