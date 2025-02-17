@@ -460,18 +460,27 @@
 	<div id="chatbot-container">
 		<div id="chatbot-icon" onclick="toggleChatbot()">💬</div>
 	
-		<div id="chatbot-popup">
-		  <div id="chatbot-header">
-			<span>Burny's Chatty</span>
-			<button id="close-chatbot" onclick="toggleChatbot()">✖</button>
-		  </div>
-		  <div id="chatbot-messages"></div>
-		  <div id="chatbot-input">
-			<input type="text" id="user-message" placeholder="Ask me anything about Burny..." />
-			<button onclick="sendMessage()">Send</button>
-		  </div>
+<!-- Chatbot Popup -->
+	<div id="chatbot-popup">
+		<div id="chatbot-header">
+		<!-- Left side: avatar + fancy text -->
+		<div class="chat-header-left">
+			<img src="images/profile_pic.jpg" alt="Burny's Avatar" class="chat-avatar" />
+			<span class="chat-title">Chat with Burny</span>
 		</div>
-	  </div>
+	
+		<!-- Right side: close button -->
+		<button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+		</div>
+	
+		<div id="chatbot-messages"></div>
+	
+		<div id="chatbot-input">
+		<input type="text" id="user-message" placeholder="Ask me anything about Burny..." />
+		<!-- Circular send button with arrow -->
+		<button class="send-btn" onclick="sendMessage()"></button>
+		</div>
+	</div>
 	
 	  <script src="js/chatbot.js"></script>
 	</body>

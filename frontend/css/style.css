@@ -1451,13 +1451,42 @@ input[type="text"] {
   border-top-right-radius: 16px;
 }
 
-/* Close button */
+.chat-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Avatar image in the header */
+.chat-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff; /* optional white border */
+}
+
+.chat-title {
+  font-size: 16px;
+  font-family: "Kaushan Script", cursive; /* or any fancy font you prefer */
+  font-weight: bold;
+}
+
 #close-chatbot {
   background: transparent;
   border: none;
   color: white;
   cursor: pointer;
   font-size: 16px;
+}
+
+/* Input Area */
+#chatbot-input {
+  display: flex;
+  padding: 10px;
+  background: #222;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
 }
 
 /* Messages Area */
@@ -1509,36 +1538,40 @@ input[type="text"] {
   color: white;
   border: none;
   border-radius: 12px;
-  font-size: 13px;        /* Match bubble font size */
+  font-size: 13px;
   outline: none;
   margin-right: 6px;
 }
 
-/* Send button */
-#chatbot-input button {
-  background: #9500ff;
+/* Circular send button with arrow icon */
+.send-btn {
+  background: linear-gradient(45deg, #9500ff, #2d2d2d);
   color: white;
   border: none;
-  padding: 8px 12px;
-  border-radius: 12px;
+  width: 50px;          /* bigger circle */
+  height: 50px;
+  border-radius: 50%;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 20px;      /* bigger base font for arrow */
   display: flex;
   align-items: center;
-  transition: background 0.3s ease-in-out;
+  justify-content: center;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
-/* Arrow icon in Send button */
-#chatbot-input button::after {
-  content: "➤";
-  margin-left: 6px;
-  font-size: 14px;
+/* Arrow icon in the send button (pseudo-element) */
+.send-btn::after {
+  content: "➤";  /* arrow icon */
+  font-size: 22px; /* bigger arrow */
+  color: white;
 }
 
-#chatbot-input button:hover {
+/* Hover effect for the circular send button */
+.send-btn:hover {
   background: linear-gradient(45deg, #7a00cc, #000000);
+  transform: scale(1.05);
 }
-
 
 
 

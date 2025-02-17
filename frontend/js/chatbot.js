@@ -1,6 +1,6 @@
 // Keep entire conversation in this array
 let conversation = [
-    { role: "assistant", content: "Hello! I'm Burny's AI. Ask me anything about his experience!" }
+    { role: "assistant", content: "Hello! I'm Burny's Chatty. Ask me anything about his experience!" }
   ];
   
   document.addEventListener("DOMContentLoaded", () => {
