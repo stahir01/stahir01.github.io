@@ -8,11 +8,22 @@ let conversation = [
     renderConversation();
   });
   
-  // Toggle chatbot popup
   function toggleChatbot() {
     const popup = document.getElementById("chatbot-popup");
-    popup.style.display = (popup.style.display === "none" || !popup.style.display) ? "flex" : "none";
-  }
+    // Check if the popup is currently open
+    if (popup.style.display === "none" || !popup.style.display) {
+        // Opening the chatbot: simply show the popup
+        popup.style.display = "flex";
+    } else {
+        // Closing the chatbot: hide the popup and reset conversation
+        popup.style.display = "none";
+        // Reset conversation to the initial greeting
+        conversation = [
+            { role: "assistant", content: "Hello! I'm Burny's AI. Ask me anything about his experience!" }
+        ];
+        renderConversation();
+    }}
+
   
   // Render conversation in #chatbot-messages
   function renderConversation() {
