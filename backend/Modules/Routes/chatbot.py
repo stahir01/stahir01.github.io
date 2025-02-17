@@ -2,36 +2,44 @@ from fastapi import APIRouter, HTTPException
 from backend.Modules.Services.retriever import retrieve_text
 from backend.Modules.Services.llm_inference import Chatbot
 from backend.Modules.config import DEEPSEEK_MODEL, HUGGINGFACE_KEY
-from typing import Dict
+from typing import Dict, List
+from pydantic import BaseModel
 
 router = APIRouter()
 
 chatbot_model = Chatbot(model_name=DEEPSEEK_MODEL, api_token=HUGGINGFACE_KEY)
 
-@router.get("/retrieve")
-async def generate_response(query: str) -> Dict:
+class Message(BaseModel):
+    role: str
+    content: str
+
+class ChatRequest(BaseModel):
+    conversation: List[Message] 
+
+@router.post("/chat")
+async def generate_chat_response(request: ChatRequest) -> Dict:
     """
-    Retrieves relevant information from the vector store and generates a response using the LLM.
+    Accepts a conversation history, retrieves relevant context from the vector store,
+    and generates a new response using the LLM.
     
-    Args:
-        query (str): The user query.
-    
-    Returns:
-        Dict: AI-generated response with metadata.
+    The conversation should be an array of messages with roles ("user" or "assistant").
+    The assistant will generate a reply based on the last user message.
     """
-    if not query:
-        raise HTTPException(status_code=400, detail="❌ Query cannot be empty.")
-    
-    # Retrieve relevant documents
+    conversation = request.conversation
+    if not conversation or conversation[-1].role != "user":
+        raise HTTPException(status_code=400, detail="The last message must be from the user.")
+
+    # Use the last user message as the current query
+    query = conversation[-1].content
+
+    # Retrieve relevant documents from the vector store (for RAG context)
     retrieved_docs = retrieve_text("backend/Modules/vector_store/chromadb", query)
+    
+    # If no relevant docs, you might decide to use an empty context
+    context = "\n".join([doc.page_content for doc in retrieved_docs]) if retrieved_docs else ""
 
-    if not retrieved_docs:
-        return {"answer": "⚠️ No relevant answer found.", "metadata": "N/A"}
-
-    # Merge retrieved content
-    retrieved_text = "\n".join([doc.page_content for doc in retrieved_docs])
-
-    # Generate LLM response
-    response = chatbot_model.generate_text(query, retrieved_text)  # ✅ Fixed spelling mistake
-
-    return {"answer": response}
+    # Generate LLM response using the query (and optionally the retrieved context)
+    response_text = chatbot_model.generate_text(query, context)
+    
+    # Return a new message as the assistant's reply
+    return {"role": "assistant", "content": response_text}
