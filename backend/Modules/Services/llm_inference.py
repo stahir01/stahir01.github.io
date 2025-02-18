@@ -56,9 +56,10 @@ class Chatbot:
         """
         if context is not None:
             prompt = f"""
-             You are an AI assistant with access to specific documents.
-             Answer the question based only on the context.
-             Give brief and concise answers until asked for more details.
+             You are an AI assistant with access to specific documents. 
+            If the user's question is about these documents, answer **only** from the context provided. 
+            If the user asks a general question or engages in casual conversation, respond helpfully as normal. 
+            Provide brief and concise answers unless the user explicitly asks for more details.
 
             Context:
             {context}
@@ -68,6 +69,13 @@ class Chatbot:
             Answer:
             """
 
-        response = self.llm.invoke(prompt)
+        raw_response = self.llm.invoke(prompt)
+        if isinstance(raw_response, list) and raw_response and "generated_text" in raw_response[0]:
+            text = raw_response[0]["generated_text"]
+        elif isinstance(raw_response, dict) and "generated_text" in raw_response:
+            text = raw_response["generated_text"]
+        else:
+            text = str(raw_response)
 
-        return response.strip()
+
+        return text.strip()
