@@ -24,5 +24,6 @@ VECTOR_DB_PATH = os.getenv("VECTOR_DB_PATH", "vector_store")
 
 #Embeddings
 MINI_LM_EMBED = 'sentence-transformers/all-MiniLM-L6-v2'
+OPENAI_EMBED = 'text-embedding-3-large'
 
 

@@ -3,9 +3,10 @@ from typing import List, Optional
 from langchain_community.vectorstores import Chroma
 from langchain.schema import Document
 from langchain_community.embeddings import HuggingFaceEmbeddings
-from backend.Modules.config import MINI_LM_EMBED
+from langchain_openai import OpenAIEmbeddings
+from backend.Modules.config import MINI_LM_EMBED, OPENAI_EMBED, OPENAI_KEY
 
-DEFAULT_EMBED_MODEL = MINI_LM_EMBED
+DEFAULT_EMBED_MODEL = OPENAI_EMBED
 
 
 def retrieve_text(
@@ -32,17 +33,15 @@ def retrieve_text(
     if embed_model is None:
         embed_model = DEFAULT_EMBED_MODEL
 
-    embedding_model = HuggingFaceEmbeddings(model_name=embed_model, show_progress=True)
-    
+    embedding_model = OpenAIEmbeddings(model=embed_model, api_key=OPENAI_KEY)
 
-    # Initialize ChromaDB with the same embedding model used for storing
+
     vector_db = Chroma(
         collection_name=collection_name,
         embedding_function=embedding_model,
         persist_directory=vectordb_path
         )
 
-    # Retrieve relevant documents from the vector store
-    matched_texts = vector_db.similarity_search(query, k=7)  
+    matched_texts = vector_db.similarity_search(query, k=2)  
 
     return matched_texts

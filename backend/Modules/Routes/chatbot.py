@@ -32,14 +32,10 @@ async def generate_chat_response(request: ChatRequest) -> Dict:
     # Use the last user message as the current query
     query = conversation[-1].content
 
-    # Retrieve relevant documents from the vector store (for RAG context)
     retrieved_docs = retrieve_text("backend/Modules/vector_store/chromadb", query)
     
-    # If no relevant docs, you might decide to use an empty context
     context = "\n".join([doc.page_content for doc in retrieved_docs]) if retrieved_docs else ""
 
-    # Generate LLM response using the query (and optionally the retrieved context)
     response_text = chatbot_model.generate_text(query, context)
     
-    # Return a new message as the assistant's reply
     return {"role": "assistant", "content": response_text}

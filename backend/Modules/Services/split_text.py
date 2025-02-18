@@ -2,8 +2,14 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain.schema import Document
 from typing import List
 
+"""
+It is a good idea to use a small chunk size for tasks that require a fine-grained view of the text and a larger chunk size 
+for tasks that require a more holistic view of the text.
 
-def split_text(pdf_docs: List[str], chunk_size: int = 500, chunk_overlap: int = 20) -> List[Document]:
+Since we want a more Holistic view as it's better for chatbot Q/A
+"""
+
+def split_text(pdf_docs: List[str], chunk_size: int = 100, chunk_overlap: int = 20) -> List[Document]:
     """
     Splits text into chunks for efficient embedding.
     

@@ -27,7 +27,7 @@ def extract_text_from_pdf(pdf_path: str) -> List[str]:
 
 def extract_text_from_json(json_path: str) -> List[str]:
     """
-    Extracts relevant text from a structured JSON file.
+    Extracts relevant text from a structured JSON file, including both work experience and projects.
 
     Args:
         json_path (str): Path to the JSON file.
@@ -40,19 +40,27 @@ def extract_text_from_json(json_path: str) -> List[str]:
 
     extracted_text = []
 
-    if isinstance(data, dict) and "work_experience" in data:
-        for job in data["work_experience"]:
-            company = job.get("company_name", "")
-            role = job.get("role", "")
-            tasks = job.get("tasks", [])
-
-            extracted_text.append(f"Company: {company}, Role: {role}")
-
-            if isinstance(tasks, list):
-                extracted_text.extend(tasks)
+    if isinstance(data, dict):
+        # Extract work experience
+        if "work_experience" in data:
+            for job in data["work_experience"]:
+                company = job.get("company_name", "")
+                role = job.get("role", "")
+                # Use "combined_description" which is a full narrative of tasks
+                description = job.get("description", "")
+                # Combine into one text block for this job
+                job_text = f"Company: {company}, Role: {role}. {description}"
+                extracted_text.append(job_text)
+        
+        # Extract projects
+        if "projects" in data:
+            for project in data["projects"]:
+                title = project.get("project_title", "")
+                description = project.get("description", "")
+                project_text = f"Project: {title}. {description}"
+                extracted_text.append(project_text)
 
     return extracted_text
-
 
 
 """
