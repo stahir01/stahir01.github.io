@@ -56,8 +56,9 @@ class Chatbot:
         """
         if context is not None:
             prompt = f"""
-            You are an AI assistant with access to specific documents.
-            Use only the following context to answer the question.
+             You are an AI assistant with access to specific documents.
+             Answer the question based only on the context.
+             Give brief and concise answers until asked for more details.
 
             Context:
             {context}
@@ -70,42 +71,3 @@ class Chatbot:
         response = self.llm.invoke(prompt)
 
         return response.strip()
-
-
-
-"""""
-class Chatbot:
-    def __init__(self, model_name: str = FALCON_MODEL):
-        self.model_name = model_name
-        self.pipeline = self.initialize_model(model_name)
-
-    def initialize_model(self, model_name: str):
-        return HuggingFacePipeline.from_model_id(
-            model_id=model_name,
-            task="text-generation",
-            model_kwargs={"device": "cpu", "temperature": 0.2, "max_length": 500}
-        )
-
-    def generate_text(self, prompt: str, context: str = None) -> str:
-        if context is not None:
-            #prompt = f
-            #You are an AI assistant with access to specific documents.
-            #Use only the following context to answer the question.
-
-            #Context:
-            #{context}
-
-            #Question: {prompt}
-
-            #Answer:
-        #sequences = self.pipeline(
-        #    prompt, 
-        #    max_length=500, 
-        #    do_sample=True, 
-        #    top_k=3, 
-        #    num_return_sequences=1,
-        #    eos_token_id=HUGGINGFACE_KEY
-        #)
-
-        #return sequences[0]["generated_text"]
-"""""
