@@ -25,5 +25,6 @@ OPENAI_EMBED = 'text-embedding-3-large'
 
 
 if __name__ == "__main__":
-    print("Hugging Face API Key: ", HUGGINGFACE_KEY)
+    print(f"Hugging Face API Key: {HUGGINGFACE_KEY}")
+    print(f"OpenAI API Key: {OPENAI_KEY}")
 
