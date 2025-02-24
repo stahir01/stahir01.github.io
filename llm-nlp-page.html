@@ -57,6 +57,103 @@
 			</div>
 		</div>
 	</div>
+
+    <div id="fh5co-work" class="fh5co-bg-dark">
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>FastAPI, LangChain, Docker, and One Extremely Lucky Human: A Chatbot’s Survival Story</h2>
+					<p>"Why Not Build a Chatbot?" A Statement That Ruined My Week</p>
+				</div>
+			</div>
+		</div>
+        
+	</div>
+    <div id="fh5co-about" class="animate-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>It all started when LLMs became the hottest trend in tech. Everyone was either building a chatbot, 
+                       deploying a chatbot, or asking me if I had built one. Everyone was asking me if I had worked with LLMs. 
+                       And, well... I had, however, it was back in 2023. I worked on an LLM-powered chatbot for the Berlin City Administration, 
+                       answering citizen queries (because nothing says "innovation" like government bureaucracy needing AI assistance). 
+                       But back then, downloading models was a nightmare. Importing them into a server? Nearly impossible. And LangChain? 
+                       It was still in its awkward teenage phase, constantly changing, breaking, and leaving us wondering what went wrong. 
+                       So, naturally, I decided to revisit this domain thinking "How hard could it be now?"</p>
+
+                    <p>So I wanted to build a chatbot for my portfolio website that could answer questions about my experience, projects, and skills. 
+                        But as soon as I sat down, reality hit me like a wrecking ball. I never hit so hard in love. Oh wait, let's not get distracted. 
+                        As I was saying, where do I even start? How do I structure the backend? How do I make it work without breaking my laptop in half? I had some LLM experience,
+                        but after months away from the field, it felt like I was starting from scratch. So, I did what any self-respecting developer would do... 
+                        I Googled the hell out of it.</p>
+
+                    <p>Step one was figuring out where to store my data. I decided to throw my entire work experience into a JSON file, because why not? 
+                        It’s clean, structured, and doesn’t judge me for copy-pasting the same job description five times. Then came LangChain, and wow. 
+                        The last time I used it, it was still figuring itself out. Now? It has a library for EVERYTHING. Need to split text? There's a function. Need embeddings? 
+                        There's a function. Need it to bring you coffee? Probably a function for that too.</p>
+
+                    <p>Next came embeddings. The last time I worked with them, we had to store everything in RAM (yes, really), which was an absolute disaster for scalability. 
+                        But now, we had proper embedding models, including OpenAI’s and Hugging Face’s. Naturally, I tried Hugging Face’s embeddings first because I love open-source tools. 
+                        But after some testing, I had to admit the painful truth: OpenAI’s embeddings were simply better for my use case. So, I swallowed my pride, 
+                        threw some API calls at OpenAI, and moved on.</p>
+
+                    <p>I then faced the heart of RAG: vector databases. If embeddings were the blood, vector databases were the circulatory system. 
+                        After some research (aka deep-diving into Reddit threads), I decided on ChromaDB for storing and retrieving embeddings. 
+                        It worked beautifully, and after some trial and error, I figured out the best retrieval strategy (k=2 or k=5? k=3.14 for fun?) 
+                        to ensure my chatbot returned relevant answers without making things up.</p>
+
+                    <p>With my data prepped and stored, I moved on to the actual model. I had two options: I could either run an LLM locally (which would turn my laptop into a glorified space heater)
+                        or use an API. Given my previous struggles with model downloads and hardware limitations, I went with Hugging Face’s API and
+                        picked DeepSeek 70B as my model of choice. It worked well, but I quickly ran into a new problem: memory and prompting. The 
+                        chatbot had the memory of a goldfish, forgetting what was said just two messages ago. And if I didn’t phrase the prompt correctly, 
+                        it would either refuse to answer anything or start hallucinating random facts. I spent hours tweaking the prompt, balancing between 
+                        allowing it to answer general questions and ensuring it stayed within the context of my portfolio. After a lot of trial and error, 
+                        I finally got it to a point where it could respond naturally while staying relevant.</p>
+
+                    <p>Just when I thought I was done, backend-frontend integration hit me like a truck. I used FastAPI for the backend and a simple HTML/CSS/JavaScript frontend, 
+                        thinking it would be a quick connection. It was not. Sometimes the backend worked, but the frontend didn’t. Other times, the frontend 
+                        worked, but the chatbot wouldn't respond. I spent 1.5 days debugging, constantly switching between console logs and API responses, 
+                        wondering why I even started this project in the first place. At one point, I was this close to smashing my laptop. But finally, after a ridiculous 
+                        amount of trial and error, the chatbot worked.</p>
+
+                    <p>And then came Docker Hell. Whoever says containerization is easy, there’s a special place in hell for you. I had worked with Docker before, and guess what? I never liked it. But yeah, here we go again.
+                        The theory was simple: Dockerize the backend, Dockerize the frontend, connect them, and boom, everything works. HAHAHA. Next joke, please. At first, things seemed fine. Backend? Built successfully. No errors, 
+                        no warnings, and life was good. Frontend? Built successfully. Okay, we’re cruising now. But then, the moment I tried to run the chatbot inside the containers? Disaster. 
+                        The frontend was fine, the backend was running, but the chatbot just outright refused to answer requests. Every time I sent a query, I got authentication errors. 
+                        API requests were failing left and right. I checked the logs, restarted the containers, and even rebuilt everything from scratch, but nothing changed. At this point, 
+                        I was questioning all my life choices, wondering if I should’ve chosen some other field instead.</p>
+
+                    <p>I was sitting there for hours, staring at my terminal like it personally betrayed me. It made no sense. The API key was right there. The .env file was in place. 
+                        What was wrong? Then, a friend came over to pick up a speaker I had borrowed. We chatted for a bit, she grabbed the speaker, and as soon as she left… 💡 
+                        It hit me like a lightning bolt. The environment variables had accidentally changed. Somewhere along the way, probably during one of my "let’s rebuild everything and 
+                        hope for the best" moments, I had messed up the .env file. The Hugging Face API key was either missing or incorrectly loaded inside the container. That’s why 
+                        the chatbot kept refusing my requests, it wasn’t actually authenticated.</p>
+
+                    <p>One quick fix, a restart, and just like that… it worked. Every request went through perfectly. I just sat there, staring at my screen, 
+                        feeling both victorious and utterly stupid at the same time. So now I have two theories: Either I was so deep in debugging hell that my brain had 
+                        completely shut down, refusing to process basic logic, or my friend was some kind of cosmic force of good luck. Like a walking, 
+                        talking Stack Overflow answer disguised as a human. Was it pure coincidence that the moment she walked in, I was drowning in Docker's misery, and the moment she left, 
+                        everything suddenly clicked? Or was she unknowingly channeling some divine debugging energy into my apartment? Honestly, at this point, 
+                        I’m not ruling anything out. Next time my code breaks or my life, for that matter, I’m calling her over for coffee. Who knows? Maybe she’ll fix both.</p>
+
+                    <p>Either way, the chatbot was finally fully Dockerized, running smoothly, and I was ready to deploy. Until… I remembered something very very important: GitHub Pages doesn’t support dynamic websites. Yep. After all that work, I couldn’t even deploy it on GitHub. My chatbot required a backend, API calls, and a vector database, all things GitHub Pages simply does not support. At this point, I just stared at my screen, took a deep breath, and told myself, I’ll deal with deployment later.</p>
+
+                    <p>This project was a rollercoaster of emotions, from rediscovering LLMs, to struggling with Docker, to wasting hours over a single missing environment variable. But despite the pain, frustration, and near-laptop-smashing moments, I learned a ton. Now, I have a fully functional, Dockerized chatbot, ready to be deployed somewhere that actually supports it.</p>
+
+                    <p>And as for my friend? If I ever start a software company, she’s getting an honorary CTO position—Chief Troubleshooting Officer.</p>
+
+                    <div class="image-container">
+                        <img src="images/Portfolio_Chatbot.png" alt="Website Chatbot" style="width: 30%; height: auto;">
+                        <p><em>Website Chatbot</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
 	
     <div id="fh5co-work" class="fh5co-bg-dark">
 		<div class="container">
@@ -67,6 +164,7 @@
 				</div>
 			</div>
 		</div>
+
 	</div>
     <div id="fh5co-about" class="animate-box">
         <div class="container">
