@@ -1340,4 +1340,242 @@ input[type="text"] {
   opacity: 0;
 }
 
+/* Style for the main button */
+.dropbtn {
+  background: linear-gradient(45deg, #9500ff, #2d2d2d);
+  color: white;
+  font-size: 12px;
+  border: none;
+  border-radius: 8px;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+/* Dropdown container */
+.dropdown {
+  position: absolute;
+  top: 12px;  /* Move down slightly */
+  right: 60px; /* Move left slightly */
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(45, 45, 45, 0.9); /* Dark background */
+  border-radius: 8px;
+  min-width: 140px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: white;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out;
+  font-size: 12px;
+}
+
+/* Change background color on hover */
+.dropdown-content a:hover {
+  background: linear-gradient(45deg, #7a00cc, #000000);
+}
+
+/* Show the dropdown when hovering over the button */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Hover effect for main button */
+.dropbtn:hover {
+  background: linear-gradient(45deg, #7a00cc, #000000);
+  transform: scale(1.05);
+}
+
+/* Chatbot Floating Button */
+#chatbot-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(45deg, #9500ff, #2d2d2d);
+  color: white;
+  font-size: 18px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+#chatbot-icon:hover {
+  transform: scale(1.1);
+  background: linear-gradient(45deg, #7a00cc, #000000);
+}
+
+/* Chatbot Popup */
+#chatbot-popup {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 380px;          /* Wider chat window */
+  height: 500px;         /* Taller chat window */
+  background: #1c1c1c;
+  border-radius: 16px;   /* More curved edges */
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+
+/* Chatbot Header */
+#chatbot-header {
+  background: linear-gradient(45deg, #9500ff, #2d2d2d); /* Fancy gradient */
+  color: white;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 14px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.chat-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Avatar image in the header */
+.chat-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff; /* optional white border */
+}
+
+.chat-title {
+  font-size: 16px;
+  font-family: "Kaushan Script", cursive; /* or any fancy font you prefer */
+  font-weight: bold;
+}
+
+#close-chatbot {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Input Area */
+#chatbot-input {
+  display: flex;
+  padding: 10px;
+  background: #222;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+/* Messages Area */
+#chatbot-messages {
+  flex: 1;               /* Fill available space */
+  padding: 10px;
+  overflow-y: auto;
+  background: #111;      /* Dark background for messages */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Chat bubble styling */
+.message {
+  margin: 0 8px;
+  max-width: 75%;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 13px;       /* Smaller font */
+  line-height: 1.4;
+  color: #fff;
+}
+
+.user {
+  align-self: flex-end;
+  background-color: #9500ff;
+}
+
+.bot {
+  align-self: flex-start;
+  background-color: #333;
+}
+
+/* Input Area */
+#chatbot-input {
+  display: flex;
+  padding: 10px;
+  background: #222;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+/* Input field */
+#user-message {
+  flex: 1;
+  padding: 10px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 13px;
+  outline: none;
+  margin-right: 6px;
+}
+
+/* Circular send button with arrow icon */
+.send-btn {
+  background: linear-gradient(45deg, #9500ff, #2d2d2d);
+  color: white;
+  border: none;
+  width: 50px;          /* bigger circle */
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;      /* bigger base font for arrow */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Arrow icon in the send button (pseudo-element) */
+.send-btn::after {
+  content: "➤";  /* arrow icon */
+  font-size: 22px; /* bigger arrow */
+  color: white;
+}
+
+/* Hover effect for the circular send button */
+.send-btn:hover {
+  background: linear-gradient(45deg, #7a00cc, #000000);
+  transform: scale(1.05);
+}
+
+
+
+
+
+
 /*# sourceMappingURL=style.css.map */
