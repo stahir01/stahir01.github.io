@@ -3,7 +3,7 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.memory import ChatMessageHistory
 from typing import List, Optional
 from langchain_huggingface import HuggingFaceEndpoint
-from backend.Modules.config import (
+from Modules.config import (
     FALCON_MODEL,
     DEEPSEEK_MODEL,
     HUGGINGFACE_KEY

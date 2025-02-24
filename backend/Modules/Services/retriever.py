@@ -4,7 +4,7 @@ from langchain_community.vectorstores import Chroma
 from langchain.schema import Document
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_openai import OpenAIEmbeddings
-from backend.Modules.config import MINI_LM_EMBED, OPENAI_EMBED, OPENAI_KEY
+from Modules.config import MINI_LM_EMBED, OPENAI_EMBED, OPENAI_KEY
 
 DEFAULT_EMBED_MODEL = OPENAI_EMBED
 

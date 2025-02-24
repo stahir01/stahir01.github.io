@@ -1,7 +1,7 @@
 import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from backend.Modules.Routes.chatbot import router as chatbot_router
+from Modules.Routes.chatbot import router as chatbot_router
 
 app = FastAPI(title="Chatbot API", description="A chatbot using RAG with LLM.")
 

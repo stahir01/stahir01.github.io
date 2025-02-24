@@ -15,7 +15,7 @@ import os
 from typing import List, Optional, Tuple
 from langchain.schema import Document
 from langchain.embeddings import HuggingFaceEmbeddings
-from backend.Modules.config import (
+from Modules.config import (
     OPENAI_KEY,
     MINI_LM_EMBED,
     VECTOR_DB_PATH

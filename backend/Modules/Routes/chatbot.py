@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
-from backend.Modules.Services.retriever import retrieve_text
-from backend.Modules.Services.llm_inference import Chatbot
-from backend.Modules.config import DEEPSEEK_MODEL, HUGGINGFACE_KEY
+from Modules.Services.retriever import retrieve_text
+from Modules.Services.llm_inference import Chatbot
+from Modules.config import DEEPSEEK_MODEL, HUGGINGFACE_KEY
 from typing import Dict, List
 from pydantic import BaseModel
 
@@ -32,7 +32,7 @@ async def generate_chat_response(request: ChatRequest) -> Dict:
     # Use the last user message as the current query
     query = conversation[-1].content
 
-    retrieved_docs = retrieve_text("backend/Modules/vector_store/chromadb", query)
+    retrieved_docs = retrieve_text("Modules/vector_store/chromadb", query)
     
     context = "\n".join([doc.page_content for doc in retrieved_docs]) if retrieved_docs else ""
 
