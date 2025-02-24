@@ -13,6 +13,7 @@ This project is a comprehensive portfolio website that not only showcases work e
 - [Docker Instructions](#docker-instructions)
   - [Building and Running Containers Individually](#building-and-running-containers-individually)
   - [Using Docker Compose](#using-docker-compose)
+- [Next Steps](#next-steps)
 
 ## Overview
 
@@ -134,6 +135,9 @@ A ```docker-compose.yml``` file is provided to run both containers together.
 - The frontend site will be accessible at ```http://localhost:80```.
 
 
+## Next Steps
+1. Find a platform to host the website. Since it's dynamic, it requires a server to run the backend. Maybe ```Heroku``` or ```AWS```?
+2. Create ```CI/CD``` pipelines to automate the deployment process to the chosen platform.
 
 
 
