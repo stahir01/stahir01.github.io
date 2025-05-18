@@ -65,6 +65,70 @@
 	</div>
 
 	<div id="fh5co-work" class="fh5co-bg-dark">
+    <div class="container">
+        <div class="row animate-box">
+            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                <h2>Building Data Castles with dbt</h2>
+                <p>Why Staging Layers Are the Scaffolding of Every Great Pipeline</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="fh5co-about" class="animate-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p class="full-width-paragraph">
+                    It all started with a real-world problem: a customer drowning in messy PostgreSQL tables—NULL values lurking like potholes, duplicate records multiplying like rabbits, and business teams begging for clean data. But when it came time to share the solution with the world, I needed something lighter, faster, and portable. Enter DuckDB, the plucky little database that could. Unlike its heavyweight cousins, DuckDB runs locally with zero setup—no servers, no cloud costs, just pure analytical power on your laptop. Perfect for showing off pipeline magic without the infrastructure headaches.
+                </p>
+                
+                <h3>The Blueprint: A Three-Story Data House</h3>
+                <p>
+                    I built a medallion architecture. A data neighborhood where information grows wiser as it climbs from floor to floor.
+					<div class="image-container">
+						<img src="images/ModularStructure_dbt.png" alt="Modular Structure" style="width: 600px; height: auto; border-radius: 15px;">
+					</div>
+                </p>
+                
+                <div class="architecture-section">
+                    <h4>The Basement (Raw Layer)</h4>
+                    <p>
+                        Here, data arrives exactly as it's born: unfiltered, unapologetic, and occasionally chaotic. We kept it untouched, like a time capsule, because you never know when you'll need to revisit the original recipe.
+                    </p>
+                    
+                    <h4>The Ground Floor (Staging Views)</h4>
+                    <p>
+                        This is where the scrubbing bubbles came out. Using <strong>dbt</strong>, I crafted lightweight views (not tables!) to clean data on-the-fly: standardizing NULLs, fixing typos, and adding unit tests (hidden in <code>schema.yml</code> like secret quality-control traps). Views meant no storage and transformed data every time someone peeked in.
+						<div class="image-container">
+						<img src="images/SchemaFile_DBT.png" alt="DBT Tests"  style="width: 300px; height: auto; border-radius: 15px;">
+					</div>
+                    </p>
+                    
+                    <h4>The Penthouse (Datamart Tables)</h4>
+                    <p>
+                        For the business teams who just wanted answers (not SQL lessons). I served up dimension tables (clean, descriptive reference data) and fact tables (the measurable "actions" like sales or invoices). These golden datasets were pre-joined, pre-aggregated, and ready for drag-and-drop dashboarding. Even better? They became building blocks for future datamarts (like LEGO pieces for data teams).
+                    </p>
+					<div class="image-container">
+						<img src="images/DbtPipeline_Build.png" alt="DBT Build" style="width: 600px; height: auto; border-radius: 15px;">
+					</div>
+                    </div>
+    
+                    <!-- GitHub Button -->
+                    <div class="button-container" style="margin-top: 30px;">
+                        <a href="https://github.com/stahir01/dbt_projects" class="btn btn-primary" target="_blank">
+                            View on GitHub
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+	
+	
+	<div id="fh5co-work" class="fh5co-bg-dark">
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
