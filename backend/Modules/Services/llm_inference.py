@@ -13,7 +13,7 @@ from Modules.config import (
 #HuggingFacePipeline: Used to download model to local filesystem first
 
 class Chatbot:
-    def __init__(self, model_name: str = DEEPSEEK_MODEL, api_token: str = HUGGINGFACE_KEY):
+    def __init__(self, model_name: str = FALCON_MODEL, api_token: str = HUGGINGFACE_KEY):
         """
         Initializes the chatbot with Hugging Face API.
 
